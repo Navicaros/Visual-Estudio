@@ -10,6 +10,6 @@ function alert(message, type) {
 
 if (alertTrigger) {
   alertTrigger.addEventListener('click', function () {
-    alert('Genial, activaste este mensaje de alerta.', 'success')
+    alert('Login Exitoso.', 'success')
   })
 }
