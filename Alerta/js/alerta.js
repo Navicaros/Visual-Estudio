@@ -1,15 +1,27 @@
-var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-var alertTrigger = document.getElementById('liveAlertBtn')
+eventListeners()
 
-function alert(message, type) {
-  var wrapper = document.createElement('div')
-  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
-
-  alertPlaceholder.append(wrapper)
+function eventListeners(){
+    const formulario = document.querySelector('#formulario');
+    formulario.addEventListener('submit', validar);
 }
 
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', function () {
-    alert('Login Exitoso.', 'success')
-  })
+function validar(e) {
+    e.preventDefault();
+
+    const usuario = String(document.querySelector('#usuario').value); 
+    const contraseña = String(document.querySelector('#contraseña').value); 
+
+    if (usuario == "1030531250" & contraseña =="lolo") {
+        swal.fire({
+            icon: 'success',
+            title: 'Login exitoso', 
+        });    
+    } else {
+        swal.fire({
+            icon: 'error',
+            title: 'Usuario o contraseña incorrecta', 
+        });       
+    }
+
+
 }
